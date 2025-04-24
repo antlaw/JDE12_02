@@ -45,9 +45,10 @@ def memberThree(content):
     # Split into lines, reverse each line, then join back
     return '\n'.join(line[::-1] for line in content.split('\n'))
 
-  
-def memberFour():
-    pass
+# Reverse the order of character of each word e.g. I am a boy -> I ma a yob  
+def memberFour(content):
+    # Reverse each word's characters while maintaining word order
+    return ' '.join(word[::-1] for word in content.split())
 
 
 if __name__ == "__main__":
@@ -58,7 +59,7 @@ if __name__ == "__main__":
     print('\nReversed lines:')
     print(f'{memberThree(content)}')
     print('\nReversed words:')
-    print('call memberFour() ')
+    print(memberFour(content))
    
     # Task-1 - count the total number of words in the prargraph that contains vowel characters(a, e, i, o u)
     
