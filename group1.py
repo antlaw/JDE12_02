@@ -8,13 +8,16 @@ def hammer_task_0():
     teamJDE = ['hammer', 'billy', 'chistina']
     result = random.sample(teamJDE, 1)
     return result
-
+ 
+ # Task-1 - count the total number of words in the prargraph that contains vowel characters(a, e, i, o u)
 def memberOne(text):
     vowels = set('aeiouAEIOU')
     words = text.split()
     vowel_count = sum(1 for word in words if any(char in vowels for char in word))
     return f"Words with vowels: {vowel_count}"
 
+
+# Task-2 - encode the paragraph by shifting the position of each character by a variable value e.g. I am a boy (1) -> J bn b cpz
 def memberTwo(text, shift=1):
     encoded = ''
     for char in text:
@@ -25,11 +28,16 @@ def memberTwo(text, shift=1):
             encoded += char
     return encoded
 
+
+# Task-3 - Reverse the entire paragraph line by line e.g. I am a boy -> yob a ma I
 def memberThree(text):
     lines = text.split('\n')
     reversed_lines = [line[::-1] for line in lines]
     return '\n'.join(reversed_lines)
 
+
+
+# Task-4 - Reverse the order of character of each word e.g. I am a boy -> I ma a yob
 def memberFour(text):
     words = text.split()
     reversed_words = [word[::-1] for word in words]
