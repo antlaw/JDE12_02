@@ -13,7 +13,12 @@ def hammer_task_0():
     return result
   
 def memberOne():
-    pass
+    vowels = set("aeiouAEIOU")
+    with open(text, "r", encoding="utf-8") as f:
+        paragraph = f.read()
+    words = paragraph.split()
+    count = sum(1 for word in words if any(char in vowels for char in word))
+    return count
   
 def memberTwo():
     pass
@@ -27,7 +32,7 @@ def memberFour():
 
 if __name__ == "__main__":
     print(hammer())
-    print('call memberOne() ')
+    print("Words with vowels:", memberOne() )
     print('call memberTwo() ')
     print('call memberThree() ')
     print('call memberFour() ')
