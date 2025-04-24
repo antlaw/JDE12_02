@@ -1,55 +1,58 @@
 import random
-
+ 
 text = '/Users/vickiliu/Documents/GitHub/JDE12_02/news.txt'
-f = open(text, "r")
-paragraph=f.read()
-
-
+ 
 def hammer_task_0():
     '''example function'''
-
     teamJDE = ['hammer', 'billy', 'chistina']
     result = random.sample(teamJDE, 1)
     return result
-  
-def count_words_with_vowels(text):
-    vowels = {'a', 'e', 'i', 'o', 'u'}
-    words = text.split()  # Split into words
-    count = 0
-    
-    for word in words:
-        # Check if any vowel is in the word (case-insensitive)
-        if any(vowel in word.lower() for vowel in vowels):
-            count += 1
-    
+ 
+ 
+def memberOne():
+    # Task-1: Count words containing at least one vowel
+    vowels = set("aeiouAEIOU")
+    with open(text, "r", encoding="utf-8") as f:
+        paragraph = f.read()
+    words = paragraph.split()
+    count = sum(1 for word in words if any(char in vowels for char in word))
     return count
-
-# Call the function
-total_words_with_vowels = count_words_with_vowels(paragraph)
-print(f"Total words containing vowels: {total_words_with_vowels}")
-pass
-  
-def memberTwo():
-    pass
-  
+ 
+ 
+def memberTwo(shift=1):
+    # Task-2: Encode the paragraph by shifting each character by a variable value
+    with open(text, "r", encoding="utf-8") as f:
+        paragraph = f.read()
+    encoded = ''
+    for char in paragraph:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            encoded += chr((ord(char) - base + shift) % 26 + base)
+        else:
+            encoded += char
+    return encoded
+ 
+ 
 def memberThree():
-    pass
-  
+    # Task-3: Reverse the entire paragraph line by line
+    with open(text, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    reversed_lines = [line.strip()[::-1] for line in lines]
+    return "\n".join(reversed_lines)
+ 
+ 
 def memberFour():
-    pass
-
-
+    # Task-4: Reverse the order of characters of each word
+    with open(text, "r", encoding="utf-8") as f:
+        paragraph = f.read()
+    words = paragraph.split()
+    reversed_words = [''.join(reversed(word)) for word in words]
+    return ' '.join(reversed_words)
+ 
+ 
 if __name__ == "__main__":
-    print(hammer())
-    print('call memberOne() ')
-    print('call memberTwo() ')
-    print('call memberThree() ')
-    print('call memberFour() ')
-   
-    # Task-1 - count the total number of words in the prargraph that contains vowel characters(a, e, i, o u)
-    
-    # Task-2 - encode the paragraph by shifting the position of each character by a variable value e.g. I am a boy (1) -> J bn b cpz
-
-    # Task-3 - Reverse the entire paragraph line by line e.g. I am a boy -> yob a ma I
-
-    # Task-4 - Reverse the order of character of each word e.g. I am a boy -> I ma a yob
+    print("Random member:", hammer_task_0())
+    print("Words with vowels:", memberOne())
+    print("Encoded paragraph (shift=1):\n", memberTwo())
+    print("Reversed lines:\n", memberThree())
+    print("Reversed characters of each word:\n", memberFour())
