@@ -1,6 +1,6 @@
 import random
  
-text = '/Users/vickiliu/Documents/GitHub/JDE12_02/news.txt'
+text = './news.txt'
  
 def hammer_task_0():
     '''example function'''
