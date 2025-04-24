@@ -31,7 +31,7 @@ def memberTwo(text, shift):
         else:
             result += char
     return result
-shift_value = 1
+
   
 def memberThree(text):
     lines = text.split('\n')  # Split by lines
@@ -47,7 +47,7 @@ def memberFour(text):
 if __name__ == "__main__":
     print(hammer_task_0())
     print('call memberOne() ', memberOne(text))
-    print('call memberTwo() ', memberTwo(text, shift_value))
+    print('call memberTwo() ', memberTwo(text, 1))
     print('call memberThree() ', memberThree(text))
     print('call memberFour() ', memberFour(text))
    
