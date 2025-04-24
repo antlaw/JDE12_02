@@ -16,3 +16,5 @@ clicked on the Compare and pull request button in the GitHub repository (making 
 If team leads has comments and want you to make changes Merge your pull request after all the conflict(if there are any) resolved
 
 Merge the branch onto Dev Delete your branch
+
+Delete the old branch 
