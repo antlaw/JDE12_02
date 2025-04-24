@@ -20,15 +20,6 @@ def memberOne(text):
     count = sum(1 for word in words if any(char in vowels for char in word))
     return count
   
-<<<<<<< Updated upstream
-def memberOne():
-    vowels = set("aeiouAEIOU")
-    with open(text, "r", encoding="utf-8") as f:
-        paragraph = f.read()
-    words = paragraph.split()
-    count = sum(1 for word in words if any(char in vowels for char in word))
-    return count
-=======
 def memberTwo(text, shift):
     result = ''
     for char in text:
@@ -40,7 +31,6 @@ def memberTwo(text, shift):
             result += char
     return result
 shift_value = 1
->>>>>>> Stashed changes
   
 def memberThree(text):
     lines = text.split('\n')  # Split by lines
