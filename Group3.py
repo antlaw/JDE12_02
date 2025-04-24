@@ -44,7 +44,7 @@ shift_value = 1
   
 def memberThree(text):
     lines = text.split('\n')  # Split by lines
-    reversed_lines = [line[::-1] for line in lines]  # Reverse each line
+    reversed_lines = [line[::-1] for line in lines]
     return '\n'.join(reversed_lines)
   
 def memberFour(text):
@@ -54,19 +54,11 @@ def memberFour(text):
 
 
 if __name__ == "__main__":
-<<<<<<< Updated upstream
-    print(hammer())
-    print("Words with vowels:", memberOne() )
-    print('call memberTwo() ')
-    print('call memberThree() ')
-    print('call memberFour() ')
-=======
     print(hammer_task_0())
     print('call memberOne() ', memberOne(text))
     print('call memberTwo() ', memberTwo(text, shift_value))
     print('call memberThree() ', memberThree(text))
     print('call memberFour() ', memberFour(text))
->>>>>>> Stashed changes
    
     # Task-1 - count the total number of words in the prargraph that contains vowel characters(a, e, i, o u)
     
