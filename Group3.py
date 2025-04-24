@@ -47,7 +47,8 @@ def memberFour(text):
 if __name__ == "__main__":
     print(hammer_task_0())
     print('call memberOne() ', memberOne(text))
-    print('call memberTwo() ', memberTwo(text, 1))
+    shift = 1
+    print('call memberTwo() ', memberTwo(text, shift))
     print('call memberThree() ', memberThree(text))
     print('call memberFour() ', memberFour(text))
    
