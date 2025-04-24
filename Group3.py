@@ -4,7 +4,8 @@ import re
 
 text = './news.txt'
 f = open(text, "r")
-print(f.read())
+text = f.read()
+# print(f.read())
 
 
 def hammer_task_0():
