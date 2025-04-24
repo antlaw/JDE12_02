@@ -18,15 +18,17 @@ def memberOne(text):
 
 
 # Task-2 - encode the paragraph by shifting the position of each character by a variable value e.g. I am a boy (1) -> J bn b cpz
-def memberTwo(text, shift=1):
-    encoded = ''
+def memberTwo(text):
+    shift = 1
+    encoded = []
     for char in text:
         if char.isalpha():
             base = ord('A') if char.isupper() else ord('a')
-            encoded += chr((ord(char) - base + shift) % 26 + base)
+            shifted_char = chr((ord(char) - base + shift) % 26 + base)
+            encoded.append(shifted_char)
         else:
-            encoded += char
-    return encoded
+            encoded.append(char)
+    return ''.join(encoded)
 
 
 # Task-3 - Reverse the entire paragraph line by line e.g. I am a boy -> yob a ma I
