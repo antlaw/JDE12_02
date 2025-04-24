@@ -13,7 +13,8 @@ def hammer_task_0():
     teamJDE = ['hammer', 'billy', 'chistina']
     result = random.sample(teamJDE, 1)
     return result
-  
+
+# Count the total number of words in the prargraph that contains vowel characters(a, e, i, o u)  
 def memberOne(content):
     vowels = {'a', 'e', 'i', 'o', 'u'}
     words = content.split()
@@ -24,7 +25,8 @@ def memberOne(content):
             count += 1
     
     return count
-  
+
+# Encode the paragraph by shifting the position of each character by a variable value e.g. I am a boy (1) -> J bn b cpz
 def memberTwo(content, shift=1):
     encoded = []
     for char in content:
@@ -37,9 +39,12 @@ def memberTwo(content, shift=1):
             # Keep non-alphabetic characters unchanged
             encoded.append(char)
     return ''.join(encoded)
-  
-def memberThree():
-    pass
+
+# Reverse the entire paragraph line by line e.g. I am a boy -> yob a ma I
+def memberThree(content):
+    # Split into lines, reverse each line, then join back
+    return '\n'.join(line[::-1] for line in content.split('\n'))
+
   
 def memberFour():
     pass
@@ -48,8 +53,11 @@ def memberFour():
 if __name__ == "__main__":
     # print(hammer_task_0())
     print(f'Words with vowels: {memberOne(content)}')
-    print(f'Encoded text: {memberTwo(content)}')
-    print('call memberThree() ')
+    print('\nEncoded text:')
+    print(f'{memberTwo(content)}')
+    print('\nReversed lines:')
+    print(f'{memberThree(content)}')
+    print('\nReversed words:')
     print('call memberFour() ')
    
     # Task-1 - count the total number of words in the prargraph that contains vowel characters(a, e, i, o u)
