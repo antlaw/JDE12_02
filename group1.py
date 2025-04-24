@@ -1,6 +1,6 @@
 import random
 
-text = '/Users/bellalee/Documents/GitHub/JDE12_02/news.txt'
+text = './news.txt'
 with open(text, "r") as f:
     paragraph = f.read()
 
