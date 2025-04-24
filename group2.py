@@ -1,8 +1,8 @@
 import random
 
-text = './news.txt'
+text = '/Users/vickiliu/Documents/GitHub/JDE12_02/news.txt'
 f = open(text, "r")
-print(f.read())
+paragraph=f.read()
 
 
 def hammer_task_0():
@@ -12,8 +12,22 @@ def hammer_task_0():
     result = random.sample(teamJDE, 1)
     return result
   
-def memberOne():
-    pass
+def count_words_with_vowels(text):
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    words = text.split()  # Split into words
+    count = 0
+    
+    for word in words:
+        # Check if any vowel is in the word (case-insensitive)
+        if any(vowel in word.lower() for vowel in vowels):
+            count += 1
+    
+    return count
+
+# Call the function
+total_words_with_vowels = count_words_with_vowels(paragraph)
+print(f"Total words containing vowels: {total_words_with_vowels}")
+pass
   
 def memberTwo():
     pass
